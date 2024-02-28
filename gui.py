@@ -1,6 +1,11 @@
 import functions
 import PySimpleGUI as gui
 import time
+import os
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 gui.theme("DarkTeal2")
 
@@ -61,6 +66,6 @@ while True:
         case 'Exit':
             break
         case gui.WIN_CLOSED:
-            break
+            window.close()
 
 window.close()
